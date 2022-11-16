@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 
-const GlobalPlantCard = ({id, plant_name, image,indoor, pet_safe, state, username, reviews, my_user_id}) => {
+const GlobalPlantCard = ({setUpdateReviews, id, plant_name, image,indoor, pet_safe, state, username, reviews, my_user_id}) => {
 
   //map through the comments
   const renderGlobalReviews = reviews.map((review) => {
@@ -40,6 +40,7 @@ const handleCommentSubmit = (e) => {
     if (res.ok) {
       res.json().then((userData) => {
         history.push(`/globalPlants`)
+        setUpdateReviews(userData)
       });
     } else {
       res.json().then((err) => setErrors(err.errors))
@@ -47,7 +48,7 @@ const handleCommentSubmit = (e) => {
   })
 }
 
-//render errors to li to display on page
+//render errors to to display on page
 const formErrorMsg = errors.map((err) => (
   <p key={err}>{err}</p>
   ))
