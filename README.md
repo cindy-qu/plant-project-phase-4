@@ -57,10 +57,10 @@ log out of the site.
 ## About the Creators 
 Anna Schmidt, Brooke Ross, Cindy Qu, and Mustafa Rizvi are all nearing the end of their 15 week, extremely rigorous online program. With Flatirons school, they have attended classes online Monday through Friday from 9am-5pm since August 29th 2022. They have a projected graduation date of December 9th, with a certificate in full stack Software Engineering. Through this program and its many challenges they have been learning to code with Ruby on Rails. With this program, they are able to showcase their hard work and passion! Plus their love of cute house plants. Connect with any of them below via LinkedIn.
 
-Connect with Anna [here](https://www.linkedin.com/in/annaschmidt1697/)
-Connect with Brooke [here](https://www.linkedin.com/in/brooke-ross-se/)
-Connect with Cindy [here](https://www.linkedin.com/in/cindy-qu/)
-Connect with Mustafa [here](https://www.linkedin.com/in/mustafa-rizvi-970494138/)
+- Connect with Anna [here](https://www.linkedin.com/in/annaschmidt1697/)
+- Connect with Brooke [here](https://www.linkedin.com/in/brooke-ross-se/)
+- Connect with Cindy [here](https://www.linkedin.com/in/cindy-qu/)
+- Connect with Mustafa [here](https://www.linkedin.com/in/mustafa-rizvi-970494138/)
 ## Environment Setup
 
 ### Install the Latest Ruby Version
