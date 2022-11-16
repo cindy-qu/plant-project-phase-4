@@ -2,6 +2,8 @@ import React from 'react'
 import PlantCard from './PlantCard.js'
 
 const PlantList = ({userPosts}) => {
+
+  console.log(userPosts)
   const renderPlantCard = userPosts.map ((onePlantCard) => {
     return(
       <PlantCard
