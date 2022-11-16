@@ -4,14 +4,9 @@ import { useEffect, useState } from "react";
 const ReviewPlantsEdit = ({ reviews }) => {
   const [description, setDescription] = useState("");
 
-
-
     return (
- 
-      
         <form>
         <h2>Editing Review</h2>
-       
         <textarea
         placeholder="show original comment here"
           rows="4"

@@ -12,7 +12,7 @@ const GlobalPlantsList = ({plantPosts}) => {
         image={oneGlobalCard.image}
         indoor={oneGlobalCard.indoor}
         state={oneGlobalCard.state}
-        petsafe={oneGlobalCard.pet_safe}
+        pet_safe={oneGlobalCard.pet_safe}
       />
     )
   })

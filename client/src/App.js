@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import './App.css';
-import NavBar from './components/NavBar';
-import Home from './components/Home';
-import About from './components/About';
-import MyPlants from './components/MyPlantsFolder/MyPlants';
+import './App.css'
+import NavBar from './components/NavBar'
+import Home from './components/Home'
+import About from './components/About'
+import MyPlants from './components/MyPlantsFolder/MyPlants'
 import ReviewPlants from './components/ReviewsFolder/ReviewPlants';
 import ReviewPlantsEdit from './components/ReviewsFolder/ReviewPlantsEdit'
 import GlobalPlants from './components/GlobalPlantsFolder/GlobalPlants';
 import LoginContainer from './components/LoginFolder/LoginContainer'
-import PlantForm from './components/PlantForm';
-import { Route, Switch } from 'react-router-dom';
+import PlantForm from './components/PlantForm'
+import { Route, Switch } from 'react-router-dom'
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null)
   const [errors, setErrors] = useState([])
   const [plantPosts, setPlantPosts]=useState([])
-  console.log(user)
+  const [newPlantPost, setNewPlantForm] = useState([])
 
   // auto-login if user_id in session and fetch user's plants and global plants
   useEffect(() => {
@@ -27,7 +27,7 @@ function App() {
         });
       }
     });
-  }, []);
+  }, [newPlantPost]);
 
   // Fetch request for global plants allowing for a user to fetch once when logged in!
   const fetchGlobalPlants = () => {
@@ -50,18 +50,11 @@ function App() {
       <NavBar user={user} setUser={setUser}/>
       <Switch>
 
-        {/* <Route exact path="/login">
-          <Login/>
-        </Route>
-
-        <Route exact path="/signup">
-          <Signup setUser={setUser}/>
-        </Route> */}
-
         <Route exact path="/">
           <Home/>
           <PlantForm 
           user={user}
+          setNewPlantForm={setNewPlantForm}
           />
         </Route>
 
