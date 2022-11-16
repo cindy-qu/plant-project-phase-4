@@ -17,7 +17,9 @@ function App() {
   const [user, setUser] = useState(null)
   const [errors, setErrors] = useState([])
   const [plantPosts, setPlantPosts]=useState([])
+  const [updateReviews, setUpdateReviews] = useState([])
   const [updatePlantPost, setUpdatePlantPost] = useState([])
+
 
   // auto-login if user_id in session and fetch user's plants and global plants
   useEffect(() => {
@@ -46,7 +48,10 @@ function App() {
   //figure out how to access both login and signup components if user is not logged in
 
   if (!user) return <LoginContainer fetchGlobalPlants={fetchGlobalPlants} setUser={setUser} />
-
+  
+  
+  const deleteReviews = (id) => setUpdateReviews(current => current.filter(p => p.id !== id)) 
+  
   return (
     <div className="App">
       <NavBar user={user} setUser={setUser}/>
@@ -73,10 +78,12 @@ function App() {
         </Route>
 
         <Route exact path="/reviews">
-          <ReviewPlants reviews={user.reviews}/>
+          <ReviewPlants reviews={user.reviews}
+          deleteReviews={deleteReviews}/>
         </Route>
 
-        <Route exact path="/reviews/:id/edit">
+
+        <Route exact path="/reviews/:id">
           <ReviewPlantsEdit reviews={user.reviews}/>
         </Route>
 
@@ -84,6 +91,7 @@ function App() {
           <GlobalPlants
             plantPosts={plantPosts}
             errors={errors}
+            user_id={user.id}
           />
         </Route>
 
