@@ -1,7 +1,7 @@
 import React from 'react'
 import ReviewPlantsCard from './ReviewPlantsCard'
 
-const ReviewPlantsList = ({ reviews, deleteReviews }) => {
+const ReviewPlantsList = ({ reviews, setUpdateReviews }) => {
 
   const renderReviewCard = reviews.map ((oneReview) => {
     return (
@@ -9,8 +9,8 @@ const ReviewPlantsList = ({ reviews, deleteReviews }) => {
        key={oneReview.id}
        comment={oneReview.comment}
        id={oneReview.id}
-       deleteReviews={deleteReviews}
-       image={oneReview.plant_post.image}/>
+       image={oneReview.plant_post.image}
+       setUpdateReviews={setUpdateReviews}/>
     )
   })
   

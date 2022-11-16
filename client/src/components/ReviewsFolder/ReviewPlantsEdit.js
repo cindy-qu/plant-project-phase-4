@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams, useHistory } from 'react-router-dom'
+import { Link, useParams, useHistory } from 'react-router-dom'
 
-const ReviewPlantsEdit = ({ reviews }) => {
+const ReviewPlantsEdit = ({ reviews, setUpdateReviews }) => {
   const [updateReview, setUpdateReview] = useState("");
+  const [updated, setUpdated] = useState(false)
   const [errors, setErrors] = useState([]);
   const history = useHistory();
 
@@ -32,7 +33,10 @@ function handleUpdate(e){
     }),
   }).then((res) => {
     if (res.ok) {
-      res.json().then(updateReview)
+      res.json().then((updateReview)=>{
+        setUpdateReviews(updateReview)
+      setUpdated(updated => !updated)
+      });
     } else {
       res.json().then((err) => 
         setErrors(err.errors)
@@ -40,6 +44,8 @@ function handleUpdate(e){
     }
   })
 }
+
+const editMsgClassName = updated ? '' : 'hidden';
 
 const formErrorMsg = errors.map((err) => (
   <p key={err}>{err}</p>
@@ -58,7 +64,15 @@ const formErrorMsg = errors.map((err) => (
         <button type="submit">Update Review</button>
       </form>
       <ul>{formErrorMsg}</ul>
+      <div id="edit-complete-msg" className={editMsgClassName}>
+                <h3>Edit complete!</h3>
+                <Link to="/reviews">
+                  <button className='return-to-reviews'>View My Reviews
+                  </button>
+                </Link>
+        </div>
       </div>
+      
     )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import GlobalPlantsList  from './GlobalPlantsList'
 
 
-const GlobalPlants = ({plantPosts, errors, user_id}) => {
+const GlobalPlants = ({plantPosts, errors, user_id, setUpdateReviews}) => {
 
 
   return (
@@ -11,6 +11,7 @@ const GlobalPlants = ({plantPosts, errors, user_id}) => {
       <GlobalPlantsList
         plantPosts={plantPosts}
         my_user_id={user_id}
+        setUpdateReviews={setUpdateReviews}
       />
 
       <h3>
