@@ -1,12 +1,20 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 
-const ReviewPlantsCard = ({ comment, id }) => {
+const ReviewPlantsCard = ({ comment, id, deleteReviews, image }) => {
+
+  function handleDelete(){
+    fetch(`/reviews/${id}`, {
+      method: 'DELETE',
+    })
+      deleteReviews(id)
+  }
   return (
     <div className="review-card">
+      <img src={image} alt={id} />
       <h3>{comment}</h3>
-      <button>Delete</button>
-      <Link to={`/reviews/${id}/edit`}>Edit</Link>
+      <button onClick={handleDelete}>Delete</button>
+      <button><Link to={`/reviews/${id}`}>Edit</Link></button>
     </div>
   )
 }
