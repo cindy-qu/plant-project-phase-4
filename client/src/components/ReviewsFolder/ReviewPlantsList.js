@@ -11,6 +11,7 @@ const ReviewPlantsList = ({ reviews, setUpdateReviews }) => {
        id={oneReview.id}
        image={oneReview.plant_post.image}
        setUpdateReviews={setUpdateReviews}/>
+
     )
   })
   

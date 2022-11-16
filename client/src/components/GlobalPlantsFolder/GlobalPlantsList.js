@@ -1,8 +1,8 @@
 import React from 'react'
 import GlobalPlantCard from './GlobalPlantCard'
+
 const GlobalPlantsList = ({plantPosts, my_user_id, setUpdateReviews}) => {
-console.log(plantPosts)
-console.log(my_user_id)
+
   const renderGlobalPlantCards = plantPosts.map((oneGlobalCard)=>{
     return (
       <GlobalPlantCard 

@@ -1,8 +1,16 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const PlantCard = ({name, image, indoor, pet_safe,state, post_id}) => {
-  console.log("indoor", indoor)
+const PlantCard = ({name, image, indoor, pet_safe,state, post_id, setUpdateAfterDelete}) => {
+
+     // Deleting a brew logic:
+     function handleDeleteClick(){
+      fetch(`/plant_posts/${post_id}`,{
+      method: "DELETE",
+      })
+      .then(res => res.json)
+      .then(setUpdateAfterDelete(post_id))
+    }
   
   return (
     <div className="plant-card">
@@ -14,6 +22,8 @@ const PlantCard = ({name, image, indoor, pet_safe,state, post_id}) => {
       <Link to={`myPlants/${post_id}`}>
         <button className= "edit-btn">Edit</button>
       </Link>
+      <button className= "edit-btn" onClick={handleDeleteClick}>X</button>
+
     </div>
   )
 }

@@ -29,7 +29,6 @@ class PlantPostsController < ApplicationController
         plantpost=PlantPost.find(params[:id])
         plantpost.destroy
         head :no_content
-        render json: plantpost
     end
 
     private

@@ -9,8 +9,9 @@ const ReviewPlantsCard = ({ comment, id, setUpdateReviews, image }) => {
     })
     .then(res => res.json)
     .then(setUpdateReviews(id))
-      
+
   }
+  
   return (
     <div className="review-card">
       <img src={image} alt={id} />
