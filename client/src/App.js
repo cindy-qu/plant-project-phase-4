@@ -17,7 +17,7 @@ function App() {
   const [plantPosts, setPlantPosts]=useState([])
   console.log(user)
 
-  // auto-login if user_id in session
+  // auto-login if user_id in session and fetch user's plants and global plants
   useEffect(() => {
     fetch("/me").then((res) => {
       if (res.ok) {
@@ -82,6 +82,7 @@ function App() {
         <Route exact path="/globalPlants">
           <GlobalPlants
             plantPosts={plantPosts}
+            errors={errors}
           />
         </Route>
 
