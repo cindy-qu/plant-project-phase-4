@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 
-const GlobalPlantCard = ({id, name, image,indoor, pet_safe, state, username, reviews, my_user_id}) => {
+const GlobalPlantCard = ({id, plant_name, image,indoor, pet_safe, state, username, reviews, my_user_id}) => {
 
   //map through the comments
   const renderGlobalReviews = reviews.map((review) => {
