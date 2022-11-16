@@ -1,4 +1,4 @@
-# Plant APP Phase 4 Project
+# Plantastic Phase 4 Project
 
 ## Description
 
