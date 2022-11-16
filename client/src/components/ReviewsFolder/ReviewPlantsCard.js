@@ -1,8 +1,13 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
-const ReviewPlantsCard = () => {
+const ReviewPlantsCard = ({ comment, id }) => {
   return (
-    <div>ReviewPlantsCard</div>
+    <div className="review-card">
+      <h3>{comment}</h3>
+      <button>Delete</button>
+      <Link to={`/reviews/${id}/edit`}>Edit</Link>
+    </div>
   )
 }
 

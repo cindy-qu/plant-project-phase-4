@@ -5,6 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import MyPlants from './components/MyPlantsFolder/MyPlants';
 import ReviewPlants from './components/ReviewsFolder/ReviewPlants';
+import ReviewPlantsEdit from './components/ReviewsFolder/ReviewPlantsEdit'
 import GlobalPlants from './components/GlobalPlantsFolder/GlobalPlants';
 import LoginContainer from './components/LoginFolder/LoginContainer'
 import PlantForm from './components/PlantForm';
@@ -75,7 +76,9 @@ function App() {
         <Route exact path="/reviews">
           <ReviewPlants reviews={user.reviews}/>
         </Route>
-
+        <Route exact path="/reviews/:id/edit">
+          <ReviewPlantsEdit reviews={user.reviews}/>
+        </Route>
         <Route exact path="/globalPlants">
           <GlobalPlants
             plantPosts={plantPosts}
