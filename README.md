@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is meant for the plant lover! Create an account or login upon opening the app. Add a plant post and interact with others through commenting in the global plants part of the application. 
+This project is meant for plant lovers! Create an account or login upon opening the app. Add a plant post and interact with others through commenting on the global plants part of the application. Like, edit, and delete posts and comments at your leisure!  
 
 ## Requirements
 
@@ -11,22 +11,26 @@ This project is meant for the plant lover! Create an account or login upon openi
 - Render account
 - Postgresql
 
-See Environment Setup below for instructions on installing these tools if you
-don't already have them.
-
 ## Setup
 
-Start by **cloning** (not forking) the project template repository and removing
-the remote:
+Start by forking and cloning this project repository to your local repository. Run the below commands:
 
 ```console
-$ git clone git@github.com:learn-co-curriculum/project-template-react-rails-api.git your-project-name
 $ cd your-project-name
-$ git remote rm origin
+$ bundle install
+$ npm install --prefix client
+$ rails db:create
+$ rails db:migrate db:seed
+```
 
+To run the server:
 ```console
-$ git remote add origin git@github.com:your-username/your-project-name.git
-$ git push -u origin main
+$ rails s
+```
+
+In a different terminal run the following commands to run the React front end:
+```console
+$ npm start --prefix client
 ```
 
 When you're ready to start building your project, run:
