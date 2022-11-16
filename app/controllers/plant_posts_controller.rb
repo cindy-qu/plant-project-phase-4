@@ -21,7 +21,7 @@ class PlantPostsController < ApplicationController
     def update
         plantpost=PlantPost.find(params[:id])
         plantpost.update!(plant_params)
-        render json: plantpost
+        render json: plantpost, status: :ok
     end
 
     # DELETE :destroy /plant_posts/:id

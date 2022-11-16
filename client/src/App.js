@@ -9,13 +9,15 @@ import ReviewPlantsEdit from './components/ReviewsFolder/ReviewPlantsEdit'
 import GlobalPlants from './components/GlobalPlantsFolder/GlobalPlants';
 import LoginContainer from './components/LoginFolder/LoginContainer'
 import PlantForm from './components/PlantForm'
+import EditPlantCard from './components/MyPlantsFolder/EditPlantCard'
 import { Route, Switch } from 'react-router-dom'
+
 
 function App() {
   const [user, setUser] = useState(null)
   const [errors, setErrors] = useState([])
   const [plantPosts, setPlantPosts]=useState([])
-  const [newPlantPost, setNewPlantForm] = useState([])
+  const [updatePlantPost, setUpdatePlantPost] = useState([])
 
   // auto-login if user_id in session and fetch user's plants and global plants
   useEffect(() => {
@@ -27,7 +29,7 @@ function App() {
         });
       }
     });
-  }, [newPlantPost]);
+  }, [updatePlantPost]);
 
   // Fetch request for global plants allowing for a user to fetch once when logged in!
   const fetchGlobalPlants = () => {
@@ -52,10 +54,7 @@ function App() {
 
         <Route exact path="/">
           <Home/>
-          <PlantForm 
-          user={user}
-          setNewPlantForm={setNewPlantForm}
-          />
+          <PlantForm user={user} setUpdatePlantPost={setUpdatePlantPost} />
         </Route>
 
         <Route exact path="/about">
@@ -66,12 +65,21 @@ function App() {
           <MyPlants user={user}/>
         </Route>
 
+        <Route exact path="/myPlants/:id">
+          <EditPlantCard 
+            user={user}
+            setUpdatePlantPost={setUpdatePlantPost}
+          />
+        </Route>
+
         <Route exact path="/reviews">
           <ReviewPlants reviews={user.reviews}/>
         </Route>
+
         <Route exact path="/reviews/:id/edit">
           <ReviewPlantsEdit reviews={user.reviews}/>
         </Route>
+
         <Route exact path="/globalPlants">
           <GlobalPlants
             plantPosts={plantPosts}

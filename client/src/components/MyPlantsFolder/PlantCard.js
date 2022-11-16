@@ -1,6 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-const PlantCard = ({name, image, indoor, pet_safe,state}) => {
+const PlantCard = ({name, image, indoor, pet_safe,state, post_id}) => {
   console.log("indoor", indoor)
   
   return (
@@ -10,6 +11,9 @@ const PlantCard = ({name, image, indoor, pet_safe,state}) => {
       <p>{indoor ? "Indoor Plant" : "Outdoor Plant"}</p>
       <p>{pet_safe ? "Pet Safe ✅" : "Unsafe for Pets"}</p>
       <p>Location: {state} </p>
+      <Link to={`myPlants/${post_id}`}>
+        <button className= "edit-btn">Edit</button>
+      </Link>
     </div>
   )
 }
