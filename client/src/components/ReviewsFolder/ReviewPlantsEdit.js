@@ -41,19 +41,12 @@ function handleUpdate(e){
   })
 }
 
-
 const formErrorMsg = errors.map((err) => (
   <p key={err}>{err}</p>
   ))
-
-
     return (
- 
       <div>
         <form onSubmit={handleUpdate}>
-
-    return (
-        <form>
         <h2>Editing Review</h2>
         <textarea
         placeholder={placeholderComment()}
