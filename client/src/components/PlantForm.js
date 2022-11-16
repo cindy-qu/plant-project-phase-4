@@ -2,7 +2,6 @@ import React,{useState} from 'react'
 import { useHistory } from 'react-router-dom'
 
 const PlantForm = ({user, setUpdatePlantPost}) => {
-  console.log(user)
     const [errors, setErrors] = useState([]);
     //plant form state
     const [plantName, setPlantName] = useState("")

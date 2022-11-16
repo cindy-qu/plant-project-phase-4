@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import PlantList from "./PlantList"
 
-const MyPlants = ({user}) => {
+const MyPlants = ({user, setUpdateAfterDelete}) => {
   const [search, setSearch]=useState("")
   const userPosts= user.plant_posts
   
@@ -19,6 +19,7 @@ const MyPlants = ({user}) => {
       <h1>MyPlants</h1>
       <PlantList
         userPosts={userPosts}
+        setUpdateAfterDelete={setUpdateAfterDelete}
         // filterMyPlantCards={filterMyPlantCards} 
       />
     </div>

@@ -1,12 +1,11 @@
 import React from 'react'
 import ReviewPlantsList from './ReviewPlantsList'
 
-const ReviewPlants = ({ reviews, deleteReviews }) => {
+const ReviewPlants = ({ reviews }) => {
 
   return (
     <div>
-      <ReviewPlantsList reviews={reviews}
-      deleteReviews={deleteReviews}/>
+      <ReviewPlantsList reviews={reviews}/>
     </div>
   )
 }

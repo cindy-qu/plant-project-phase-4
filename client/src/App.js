@@ -18,6 +18,9 @@ function App() {
   const [errors, setErrors] = useState([])
   const [plantPosts, setPlantPosts]=useState([])
   const [updateReviews, setUpdateReviews] = useState([])
+  const [updateAfterDelete, setUpdateAfterDelete] = useState([])
+
+  //this state causes the below useEffect to run by being updated when creating, editing, or deleting a plant post
   const [updatePlantPost, setUpdatePlantPost] = useState([])
 
 
@@ -31,7 +34,7 @@ function App() {
         });
       }
     });
-  }, [updatePlantPost]);
+  }, [updatePlantPost, updateReviews, updateAfterDelete]);
 
   // Fetch request for global plants allowing for a user to fetch once when logged in!
   const fetchGlobalPlants = () => {
@@ -44,13 +47,20 @@ function App() {
       }
     })
   }
+  //delete a plantPost (remove from myPlants and Global Plants)
+//   function handleDeletePlant(deleteId){
+//     console.log(plantPosts)
+//     const newPlantPosts=plantPosts.filter((plant) => plant.id !== deleteId);
+
+//     // setPlantPosts(newPlantPosts)
+//     setUpdateAfterDelete(newPlantPosts)
+//     console.log(newPlantPosts)
+
+// }
 
   //figure out how to access both login and signup components if user is not logged in
 
   if (!user) return <LoginContainer fetchGlobalPlants={fetchGlobalPlants} setUser={setUser} />
-  
-  
-  const deleteReviews = (id) => setUpdateReviews(current => current.filter(p => p.id !== id)) 
   
   return (
     <div className="App">
@@ -67,7 +77,7 @@ function App() {
         </Route>
 
         <Route exact path="/myPlants">
-          <MyPlants user={user}/>
+          <MyPlants user={user} setUpdateAfterDelete={setUpdateAfterDelete}/>
         </Route>
 
         <Route exact path="/myPlants/:id">
@@ -78,8 +88,7 @@ function App() {
         </Route>
 
         <Route exact path="/reviews">
-          <ReviewPlants reviews={user.reviews}
-          deleteReviews={deleteReviews}/>
+          <ReviewPlants reviews={user.reviews}/>
         </Route>
 
 

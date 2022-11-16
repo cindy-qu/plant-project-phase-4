@@ -1,9 +1,7 @@
 import React from 'react'
 import PlantCard from './PlantCard.js'
 
-const PlantList = ({userPosts}) => {
-
-  console.log(userPosts)
+const PlantList = ({userPosts, setUpdateAfterDelete}) => {
   const renderPlantCard = userPosts.map ((onePlantCard) => {
     return(
       <PlantCard
@@ -14,6 +12,7 @@ const PlantList = ({userPosts}) => {
         indoor={onePlantCard.indoor}
         pet_safe={onePlantCard.pet_safe}
         state={onePlantCard.state}
+        setUpdateAfterDelete={setUpdateAfterDelete}
       />
     )
   })
