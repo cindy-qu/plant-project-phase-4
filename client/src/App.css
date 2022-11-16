@@ -41,7 +41,7 @@
   transform: scale(1.1);
   cursor: pointer;
 }
-/*------------ Login-page ---------- */
+/*------------ Login/Signup pages ---------- */
 .login-container{
   display: flex;
   flex-direction: column;
@@ -75,8 +75,8 @@
   font-family: var(--abril-font);
   font-size: 20px;
   color: var(--main-plum);
-
 }
+
 .login-form input, .signup-form input{
   padding: 5px;
   border: 2px solid;
@@ -105,7 +105,26 @@
   margin-top: 20px;
 }
 .plant-form select {
-  margin-top: 20px;
+  margin: 10px 5px;
 }
 
 
+/*------------ MyPlants/GlobalPlants ---------- */
+
+.plant-card {
+margin: 60px;
+}
+
+.plant-card img {
+  width: 400px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(156, 146, 146);
+}
+
+/* -----Hidden class --------- */
+.hidden {
+  visibility: hidden;
+}

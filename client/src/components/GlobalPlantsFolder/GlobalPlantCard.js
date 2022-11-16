@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
+
 const GlobalPlantCard = ({id, name, image,indoor, pet_safe, state, username, reviews, my_user_id}) => {
 
   //map through the comments
@@ -51,11 +52,13 @@ const formErrorMsg = errors.map((err) => (
   <p key={err}>{err}</p>
   ))
 
+
+
   
   return (
     <div className="plant-card">
-      <h3>{name}</h3>
-      <img src={image} alt={name} />
+      <h3>{plant_name}</h3>
+      <img src={image} alt={plant_name} />
       <p>{username}</p>
       <p>{indoor ? "Indoor Plant" : "Outdoor Plant"}</p>
       <p>{pet_safe ? "Pet Safe ✅" : "Unsafe for Pets"}</p>

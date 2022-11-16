@@ -13,9 +13,10 @@ console.log(my_user_id)
         image={oneGlobalCard.image}
         indoor={oneGlobalCard.indoor}
         state={oneGlobalCard.state}
-        petsafe={oneGlobalCard.pet_safe}
         reviews={oneGlobalCard.reviews}
         my_user_id={my_user_id}
+        pet_safe={oneGlobalCard.pet_safe}
+
       />
     )
   })
