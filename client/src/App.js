@@ -31,7 +31,7 @@ function App() {
         });
       }
     });
-  }, [updatePlantPost]);
+  }, [updatePlantPost, updateReviews]);
 
   // Fetch request for global plants allowing for a user to fetch once when logged in!
   const fetchGlobalPlants = () => {
@@ -50,7 +50,7 @@ function App() {
   if (!user) return <LoginContainer fetchGlobalPlants={fetchGlobalPlants} setUser={setUser} />
   
   
-  const deleteReviews = (id) => setUpdateReviews(current => current.filter(p => p.id !== id)) 
+
   
   return (
     <div className="App">
@@ -79,12 +79,14 @@ function App() {
 
         <Route exact path="/reviews">
           <ReviewPlants reviews={user.reviews}
-          deleteReviews={deleteReviews}/>
+          setUpdateReviews={setUpdateReviews}
+          />
         </Route>
 
 
         <Route exact path="/reviews/:id">
-          <ReviewPlantsEdit reviews={user.reviews}/>
+          <ReviewPlantsEdit reviews={user.reviews}
+          setUpdateReviews={setUpdateReviews}/>
         </Route>
 
         <Route exact path="/globalPlants">
@@ -92,6 +94,7 @@ function App() {
             plantPosts={plantPosts}
             errors={errors}
             user_id={user.id}
+            setUpdateReviews={setUpdateReviews}
           />
         </Route>
 
