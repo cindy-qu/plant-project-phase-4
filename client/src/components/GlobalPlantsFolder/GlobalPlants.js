@@ -2,7 +2,8 @@ import React from 'react'
 import GlobalPlantsList  from './GlobalPlantsList'
 
 const GlobalPlants = ({plantPosts, errors}) => {
-
+  console.log(plantPosts)
+  
   return (
     <div>
       <h1>Global Plants</h1>
@@ -11,7 +12,7 @@ const GlobalPlants = ({plantPosts, errors}) => {
       />
 
       <h3>
-        Sorry we could not load the plant posts. {errors}
+        {errors}
       </h3>
       
     </div>

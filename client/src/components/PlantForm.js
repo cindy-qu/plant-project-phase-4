@@ -1,8 +1,9 @@
 import React,{useState} from 'react'
 import { useHistory } from 'react-router-dom'
 
-const PlantForm = ({user}) => {
+const PlantForm = ({user, setNewPlantForm}) => {
     const [errors, setErrors] = useState([]);
+    //plant form state
     const [plantName, setPlantName] = useState("")
     const [image, setImage] = useState("")
     const [location, setLocation] = useState("")
@@ -43,7 +44,7 @@ const handlePlantSubmit = (e) => {
         indoor: indoor,
         user_id: user.id,
     }
-    console.log(formData)
+    
     
     fetch(`/plant_posts`, {
         method: "POST",
@@ -55,6 +56,7 @@ const handlePlantSubmit = (e) => {
     .then((res) => {
       if (res.ok) {
         res.json().then((userData) => {
+            setNewPlantForm(userData)
           history.push('/myPlants')
         });
       } else {
@@ -79,7 +81,7 @@ const formErrorMsg = errors.map((err) => (
             <label>Image URL:</label>
             <input type='text'id="image" name="image" value={image} onChange={handleImage} required/>
 
-            <label>State</label>
+            <label>State
             <select id="state" name="state" value={location} onChange={handleLocation} required>
                 <option value="select">Select State</option>
                 <option value="AL">Alabama</option>
@@ -133,12 +135,15 @@ const formErrorMsg = errors.map((err) => (
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
             </select>
+            </label>
 
-            <label>Indoor</label>
+            <label>Indoor
             <input type="radio" id="indoor" name="indoor" checked={indoor ? "checked" : ''} value={indoor} onChange={handleIndoorChecked} />
+            </label>
         
-            <label>Pet Safe</label>
+            <label>Pet Safe
             <input type="radio" id="pet_safe" name="pet_safe" checked={petSafe ? "checked" : ''} value={petSafe} onChange={handlePetSafeChecked} />
+            </label>
 
             <button id="add-btn"className='submit-btn' type="submit">ADD PLANT</button>
         </form>
