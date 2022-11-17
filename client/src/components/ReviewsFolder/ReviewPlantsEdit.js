@@ -51,7 +51,7 @@ const formErrorMsg = errors.map((err) => (
   <p key={err}>{err}</p>
   ))
     return (
-      <div>
+      <div className="edit-page">
         <form onSubmit={handleUpdate}>
         <h2>Editing Review</h2>
         <textarea
@@ -61,7 +61,7 @@ const formErrorMsg = errors.map((err) => (
           onChange={(e) => setUpdateReview(e.target.value)}
         />
       <br></br>
-        <button type="submit">Update Review</button>
+        <button className ="submit-btn"type="submit">Update Review</button>
       </form>
       <ul>{formErrorMsg}</ul>
       <div id="edit-complete-msg" className={editMsgClassName}>

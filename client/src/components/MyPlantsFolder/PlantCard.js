@@ -16,8 +16,8 @@ const PlantCard = ({name, image, indoor, pet_safe,state, post_id, setUpdateAfter
     <div className="plant-card myPlant-card">
       <h3>{name}</h3>
       <img src={image} alt={name} />
-      <p>{indoor ? "Indoor Plant🏠" : "Outdoor Plant🌞"}</p>
-      <p>{pet_safe ? "Pet Safe ✅" : "Unsafe for Pets🚫"}</p>
+      <p>{indoor ? "Indoor Plant 🏠" : "Outdoor Plant 🌞"}</p>
+      <p>{pet_safe ? "Pet Safe ✅" : "Unsafe for Pets 🚫"}</p>
       <p>Location: {state} </p>
       <Link to={`myPlants/${post_id}`}>
         <button className= "edit-btn">Edit</button>

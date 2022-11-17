@@ -8,7 +8,6 @@ import ReviewPlants from './components/ReviewsFolder/ReviewPlants';
 import ReviewPlantsEdit from './components/ReviewsFolder/ReviewPlantsEdit'
 import GlobalPlants from './components/GlobalPlantsFolder/GlobalPlants';
 import LoginContainer from './components/LoginFolder/LoginContainer'
-import PlantForm from './components/PlantForm'
 import EditPlantCard from './components/MyPlantsFolder/EditPlantCard'
 import { Route, Switch } from 'react-router-dom'
 
@@ -60,8 +59,8 @@ function App() {
       <Switch>
 
         <Route exact path="/">
-          <Home/>
-          <PlantForm user={user} setUpdatePlantPost={setUpdatePlantPost} />
+          <Home user={user} setUpdatePlantPost={setUpdatePlantPost}/>
+          {/* <PlantForm user={user} setUpdatePlantPost={setUpdatePlantPost} /> */}
         </Route>
 
         <Route exact path="/about">

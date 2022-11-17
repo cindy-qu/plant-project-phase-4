@@ -1,10 +1,14 @@
 import React from 'react';
+import PlantasticImg from '../imagesFolder/Plantastic LOGO.png'
+import PlantForm from './PlantForm';
 
-function Home(){
+function Home({user, setUpdatePlantPost}){
     return (
-        <div className='home page-container'>
+        <div className='home'>
+            <img src={PlantasticImg} alt="" />
             <div className="home-intro">
-                <h1>Plant App</h1>
+                <PlantForm user={user} setUpdatePlantPost={setUpdatePlantPost}/>
+                
             </div>
         </div>
 

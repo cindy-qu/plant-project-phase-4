@@ -6,7 +6,7 @@ const GlobalPlants = ({plantPosts, errors, user_id, setUpdateReviews}) => {
 
 
   return (
-    <div className='page-container' >
+    <div className='page-container global-page' >
       <h1>Global Plants</h1>
       <GlobalPlantsList
         plantPosts={plantPosts}

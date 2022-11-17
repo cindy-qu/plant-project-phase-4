@@ -2,13 +2,25 @@
 :root{
   --box-shadow: rgb(230, 235, 239);
   --border-grey: rgb(125, 131, 130);
-  --white-blur: rgba(247, 251, 254, 0.9);
-  --green: rgb(16, 161, 115);
-  --dark-green: ##003F07;
+  --white: rgb(228, 232, 234);
+  --white-blur: rgba(228, 232, 234, 0.3);
+  --dark-grey:rgb(83, 87, 86);
+  --green: rgba(16, 161, 115,0.9);
+  --seed-green: rgb(68, 126, 88);
+  --dark-green: #034f2f;
+  --font-q:'Questrial', sans-serif;
+  --font-martel:'Martel', serif;
 }
 
 .App {
   text-align: center;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--font-martel);
 }
 
 .page-container{
@@ -31,18 +43,26 @@ button:hover{
   cursor: pointer;
 }
 
+h1, h3{
+  color: var(--dark-green);
+}
+
+
+
 
 /*------------ NAVBAR ---------- */
 .nav {
   width: 100vw;
+  position: fixed;
+  margin: 0 auto;
   display: flex;
   justify-content: left;
   align-items:left;
   align-content: center;
   flex-direction: row;
-  position: fixed;
   z-index: 2;
   max-width: 1500px;
+  background-color: var(--green);
   backdrop-filter: blur(5px);
 }
 
@@ -53,7 +73,7 @@ button:hover{
   padding: 25px 0; 
   margin: 0 25px;
   transition: 0.2s ease-in-out;
-  color:rgb(52, 49, 49);
+  color: var(--white);
 }
 .nav a:hover{
   transform: scale(1.1);
@@ -64,22 +84,29 @@ button:hover{
   margin-left: auto;
   margin-top: 15px;
   padding-right: 20px;
+  color: var(--white);
 }
 
 .sign-out{
-  margin: 5px;
+  margin: 7px;
+}
+/*------------ Home ---------- */
+.home img{
+  width: 400px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: contain;
+  padding-top: 60px;
 }
 
 /* -------- About -------- */
 .about-container{
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   padding: none;
-  margin: none;
+  margin: 0 auto;
   max-width: 1500px;
-  max-height: 1200px;
   background-image: url("./PlantImages/plantPic7.jpg");
-  background-attachment: fixed;
   background-repeat: no-repeat; 
   background-size: cover;
 }
@@ -87,11 +114,15 @@ button:hover{
   padding: 100px 50px;
   margin: 0 auto;
   width: 60vw;
+  height: 100vh;
   max-width: 1500px;
   overflow-y: scroll;
-  color: var(--white-blur);
-  /* background-color: var(--white-blur); */
+  color: var(--white);
 	backdrop-filter: blur(15px);
+  }
+
+  .about h1{
+    color: var(--white)
   }
 
 .about li{
@@ -131,7 +162,8 @@ button:hover{
     height: 25px;
   }
 
-/*------------ Login/Signup pages ---------- */
+
+/*------------Signup pages ---------- */
 .login-container{
   display: flex;
   flex-direction: column;
@@ -144,8 +176,7 @@ button:hover{
 .login-container button{
   margin-top: 20px;
   color: white;
-  background-image: linear-gradient(to right,  #277756 0%, #44d58c 51%, #5ae8a1 100%);
-  /* background-image: linear-gradient(to right,  #2EB62C 0%, #57C84D 51%, #83D475 100%); */
+  background-image: linear-gradient(to right,  var(--dark-green) 0%, #448061 51%, #4c9a6c 100%);
 }
 
 .login-page, .signup-page{
@@ -155,6 +186,16 @@ button:hover{
   justify-content: center;
   align-content: center;
   align-items: center;
+  margin: 50px auto;
+  width: 50vw;
+  max-width: 500px;
+}
+
+#login-img{
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin-top: 30px;
 }
 
 .login-form, .signup-form{
@@ -168,7 +209,7 @@ button:hover{
 .login-form button, .signup-form button{
  margin-top: 20px;
  color: white;
- background-image: linear-gradient(to right,  #2EB62C 0%, #57C84D 51%, #83D475 100%);
+
 
 }
 
@@ -183,7 +224,18 @@ button:hover{
   border: 2px solid;
   border-radius: 5px;
 }
-
+.loginBlur{
+  backdrop-filter: blur(15px);
+  background-color: var(--white-blur);
+  /* border: 1px solid white; */
+  border-radius: 7px;
+  margin: 200px auto;
+  width: 50vw;
+  max-width: 500px;
+  padding-bottom: 15px;
+  font-family: var(--font-martel);
+  color: var(--dark-green)
+}
 
 /*------------ Plant-Form ---------- */
 .plant-form{
@@ -215,10 +267,11 @@ button:hover{
 .plant-card {
 position: relative;
 margin: 60px;
-width: 60vw;
+width: 50vw;
 margin: 0 auto;
 padding: 60px 0;
-border-bottom: 3px solid var(--border-grey);
+border-bottom: 3px solid var(--dark-green);
+backdrop-filter: blur(10px);
 }
 
 .plant-card img {
@@ -228,7 +281,6 @@ border-bottom: 3px solid var(--border-grey);
   border-radius: 5px;
   margin-bottom: 10px;
   border: 1px solid var(--border-grey);
-  box-shadow: 5px 10px 10px var(--box-shadow);
 }
 
 /* -----delete/edit btns for myPlants and MyReviews--------- */
@@ -236,24 +288,28 @@ border-bottom: 3px solid var(--border-grey);
 .delete-btn{
   position:absolute;
   top: 30px;
-  right: 0;
-  font-size: 20px;
+  right: 10px;
+  font-size: 18px;
   background-color: transparent;
   padding: 0;
   margin-bottom: 0;
+  padding: 3px;
+  color: var(--dark-green);
 }
 .edit-btn{
   position:absolute;
   top: 30px;
   right: 35px;
-  font-size: 20px;
+  font-size: 18px;
   background-color: transparent;
   padding: 0;
   margin-bottom: 0;
+  color: var(--dark-green);
+  padding: 3px;
 }
 
 /* -----My Plants --------- */
-.my-plants-page{
+.my-plants-page, .global-page{
   height: 100vh;
   width: 100vw;
   padding: none;
@@ -266,13 +322,21 @@ border-bottom: 3px solid var(--border-grey);
   background-size: cover;
   background-attachment: fixed;
   overflow-y: scroll;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
 }
 
+
+
 /* -----Global Plants --------- */
+
+.global-page{
+  background-image: url("./PlantImages/plantPic6.jpg");
+  background-position: top 50% right 0%;
+  background-repeat: no-repeat; 
+  background-size: center;
+  background-attachment: fixed;
+  overflow-y: scroll;
+}
+
 .globalUsername{
   position:absolute;
   top: 10px;
@@ -280,6 +344,11 @@ border-bottom: 3px solid var(--border-grey);
   font-size: 20px;
   background-color: transparent;
   padding: 0;
+}
+
+.globalPlant-card span{
+  color: var(--dark-green);
+  font-weight: bold;
 }
 
 .review-list{
@@ -298,8 +367,39 @@ border-bottom: 3px solid var(--border-grey);
 
 .review-form{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-input{
+  display: flex;
   flex-direction: row;
   justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.review-input textarea{
+  height: 100px;
+  width: 30vw;
+  max-width: 400px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-image: linear-gradient(to right,  var(--dark-green) 0%, #34634b 51%, #4c9a6c 100%);
+  color: var(--white);
+  margin: 10px
+}
+
+/* ------------Edit Page------------ */
+
+.edit-page{
+  padding-top: 200px;
 }
 
 /* ------------Movie Class------------ */

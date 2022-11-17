@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { useHistory } from 'react-router-dom'
 
+
 const PlantForm = ({user, setUpdatePlantPost}) => {
     const [errors, setErrors] = useState([]);
     //plant form state
@@ -72,6 +73,7 @@ const formErrorMsg = errors.map((err) => (
     
   return (
     <div className='plant-form-container'>
+      
         <h2>Add a new Plant!</h2>
         <form className="plant-form" autoComplete='off' onSubmit={handlePlantSubmit}>
 

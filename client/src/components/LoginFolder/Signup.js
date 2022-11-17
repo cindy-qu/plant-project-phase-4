@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import PlantasticPic from '../../imagesFolder/Plantastic LOGO.png';
 
 const Signup = ({ setUser, fetchGlobalPlants }) => {
   const [username, setUsername] = useState("");
@@ -38,6 +39,7 @@ const Signup = ({ setUser, fetchGlobalPlants }) => {
 
   return (
     <div className='signup-page'>
+       <img id="login-img" src={PlantasticPic} alt="" />
     <form className='signup-form' onSubmit={handleSubmit}>
       <h1>Sign Up</h1>
       <label htmlFor="username">Username</label>
