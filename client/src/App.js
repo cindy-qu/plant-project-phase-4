@@ -18,11 +18,10 @@ function App() {
   const [errors, setErrors] = useState([])
   const [plantPosts, setPlantPosts]=useState([])
   const [updateReviews, setUpdateReviews] = useState([])
-  const [updateAfterDelete, setUpdateAfterDelete] = useState([])
+  const [updateAfterDelete, setUpdateAfterDelete] = useState(false)
 
   //this state causes the below useEffect to run by being updated when creating, editing, or deleting a plant post
   const [updatePlantPost, setUpdatePlantPost] = useState([])
-
 
   // auto-login if user_id in session and fetch user's plants and global plants
   useEffect(() => {
@@ -36,7 +35,6 @@ function App() {
     });
 
   }, [updatePlantPost, updateReviews, updateAfterDelete]);
-
 
   // Fetch request for global plants allowing for a user to fetch once when logged in!
   const fetchGlobalPlants = () => {
@@ -91,13 +89,10 @@ function App() {
         </Route>
 
         <Route exact path="/reviews">
-
           <ReviewPlants reviews={user.reviews}
           setUpdateReviews={setUpdateReviews}
           />
-
         </Route>
-
 
         <Route exact path="/reviews/:id">
           <ReviewPlantsEdit reviews={user.reviews}
