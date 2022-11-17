@@ -2,6 +2,7 @@ import { useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
 import { Link } from "react-router-dom";
+import VideoBackground from "../../PlantImages/VideoBackground.mp4"
 
 import React from 'react'
 
@@ -9,9 +10,11 @@ const LoginContainer = ({ setUser, fetchGlobalPlants }) => {
     const [showLogin, setShowLogin] = useState(true);
   return (
     <div className="login-container">
-        <h1>Plant App</h1>
+        <h1>Plantastic</h1>
         {showLogin ? (
             <div>
+                
+                <video id="background-video" src={VideoBackground} autoPlay loop muted />
                 <Login setUser={setUser} fetchGlobalPlants={fetchGlobalPlants}/>
                 <p>Don't have an account?</p>
                 <Link to='/signup'>
@@ -20,6 +23,7 @@ const LoginContainer = ({ setUser, fetchGlobalPlants }) => {
             </div>
         ) : (
             <div>
+                <video id="background-video" src={VideoBackground} autoPlay loop muted />
                 <Signup setUser={setUser} fetchGlobalPlants={fetchGlobalPlants}/>
                 <p>Have an account?</p>
                 <Link to='/login'>

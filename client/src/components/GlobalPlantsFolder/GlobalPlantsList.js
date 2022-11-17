@@ -4,6 +4,7 @@ import GlobalPlantCard from './GlobalPlantCard'
 const GlobalPlantsList = ({plantPosts, my_user_id, setUpdateReviews}) => {
 
   const renderGlobalPlantCards = plantPosts.map((oneGlobalCard)=>{
+    
     return (
       <GlobalPlantCard 
         key={oneGlobalCard.id}
