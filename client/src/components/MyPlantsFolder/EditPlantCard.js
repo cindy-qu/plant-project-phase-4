@@ -86,7 +86,7 @@ const EditPlantCard = ({user, setUpdatePlantPost}) => {
   const editMsgClassName = updated ? '' : 'hidden';
 
   return (
-    <div className='plant-form-container'>
+    <div className='plant-form-container edit-page'>
         <h2>Edit a Plant Post!</h2>
         <form className="plant-form" autoComplete='off' onSubmit={handleUpdateSubmit}>
 
