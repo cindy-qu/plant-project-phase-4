@@ -22,8 +22,6 @@ function App() {
 
   //this state causes the below useEffect to run by being updated when creating, editing, or deleting a plant post
   const [updatePlantPost, setUpdatePlantPost] = useState([])
-
-  console.log(plantPosts)
   
   // auto-login if user_id in session and fetch user's plants and global plants
   useEffect(() => {
@@ -49,18 +47,9 @@ function App() {
       }
     })
   }
-  //delete a plantPost (remove from myPlants and Global Plants)
-//   function handleDeletePlant(deleteId){
-//     console.log(plantPosts)
-//     const newPlantPosts=plantPosts.filter((plant) => plant.id !== deleteId);
 
-//     // setPlantPosts(newPlantPosts)
-//     setUpdateAfterDelete(newPlantPosts)
-//     console.log(newPlantPosts)
-
-// }
-
-  //figure out how to access both login and signup components if user is not logged in
+  console.log(plantPosts)
+  
 
   if (!user) return <LoginContainer fetchGlobalPlants={fetchGlobalPlants} setUser={setUser} />
   
@@ -93,6 +82,7 @@ function App() {
         <Route exact path="/reviews">
           <ReviewPlants reviews={user.reviews}
           setUpdateReviews={setUpdateReviews}
+          setUpdateAfterDelete={setUpdateAfterDelete}
           />
         </Route>
 

@@ -1,7 +1,11 @@
 import React from 'react'
+import Anna_about from '../imagesFolder/Anna_about.jpeg'
+import Brooke_about from '../imagesFolder/Brooke_about2.jpg'
+import Cindy_about from '../imagesFolder/Cindy_about.jpg'
 
 const About = () => {
   return (
+    <div className="about-container">
     <div className='about'>
     <h1>About</h1>
     <p>
@@ -34,26 +38,27 @@ const About = () => {
         
     <div className="about-photos">
         <div className= "about-information">
-            {/* <img src={Anna_about} alt="Anna" /> */}
+            <img src={Anna_about} alt="Anna" />
             <a href="https://www.linkedin.com/in/annaschmidt1697/" target="_blank">Anna <i className="fa-brands fa-linkedin" /></a> 
-            <p>Anna's favorite plant is...</p>
+            <p>Anna's favorite plant is... a Tillandsia!</p>
         </div>
         <div className="about-information"> 
-            {/* <img src= {Brooke_about} alt="Brooke"/> */}
+            <img src= {Brooke_about} alt="Brooke"/>
             <a href="https://www.linkedin.com/in/brooke-ross-se/" target="_blank" >Brooke <i className="fa-brands fa-linkedin" /></a> 
-            <p>Brooke's favorite plant is...</p>
+            <p>Brooke's favorite plant is... a Myrtillocactus geometrizans!</p>
         </div>           
         <div className="about-information"> 
-            {/* <img src={Cindy_about} alt="Cindy" /> */}
+            <img src={Cindy_about} alt="Cindy" />
             <a href="https://www.linkedin.com/in/cindy-qu/" target="_blank" >Cindy <i className="fa-brands fa-linkedin" /></a>
-            <p>Cindys's favorite plant is...</p>
+            <p>Cindys's favorite plant is... a Asplenium nidus variegated!</p>
         </div>
         <div className="about-information">
-            {/* <img src={Mustafa_about} alt="Cindy" />  */}
+            {/* <img src={Mustafa_about} alt="Mustafa" />  */}
             <a href="https://www.linkedin.com/in/mustafa-rizvi-970494138/" target="_blank" >Mustafa <i className="fa-brands fa-linkedin" /></a>
-            <p>Mustafa's favorite plant is...</p>
+            <p>Mustafa's favorite plant is... </p>
         </div>
     </div>
+  </div>
 </div>
   )
 }

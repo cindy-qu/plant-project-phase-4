@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     # GET :show /reviews/:id (serializer for reviews being shown to specific posts)
     def show
         review = Review.find(params[:id])
-        render json: review
+        render json: review, status: :ok
     end
     # POST :create /reviews/:id
     def create

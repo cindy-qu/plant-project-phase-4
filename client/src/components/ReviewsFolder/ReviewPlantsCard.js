@@ -1,14 +1,13 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 
-const ReviewPlantsCard = ({ comment, id, setUpdateReviews, image }) => {
+const ReviewPlantsCard = ({ comment, id, setUpdateReviews, image, setUpdateAfterDelete }) => {
 
   function handleDelete(){
     fetch(`/reviews/${id}`, {
       method: 'DELETE',
     })
-    .then(res => res.json)
-    .then(setUpdateReviews(id))
+    .then(setUpdateAfterDelete)
 
   }
   

@@ -8,7 +8,7 @@ const GlobalPlantCard = ({setUpdateReviews, id, plant_name, image,indoor, pet_sa
   const renderGlobalReviews = reviews.map((review) => {
   return(
     //need to show associated username
-  <p key={review.id}>{review.comment} </p>
+  <p className="comments" key={review.review.id}>🍃 {review.review.comment} - {review.user.username}  </p>
   )
 })
 
@@ -61,8 +61,8 @@ const formErrorMsg = errors.map((err) => (
       <h3>{plant_name}</h3>
       <img src={image} alt={plant_name} />
       <p className='globalUsername'>Created By: {username}</p>
-      <p>{indoor ? "Indoor Plant" : "Outdoor Plant"}</p>
-      <p>{pet_safe ? "Pet Safe ✅" : "Unsafe for Pets"}</p>
+      <p>{indoor ? "Indoor Plant🏠" : "Outdoor Plant🌞"}</p>
+      <p>{pet_safe ? "Pet Safe ✅" : "Unsafe for Pets🚫"}</p>
       <p>Location: {state}</p>
     
       <h4>Reviews</h4>
