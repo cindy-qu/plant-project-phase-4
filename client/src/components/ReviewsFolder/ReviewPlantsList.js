@@ -4,6 +4,7 @@ import ReviewPlantsCard from './ReviewPlantsCard'
 const ReviewPlantsList = ({ reviews, setUpdateReviews }) => {
 
   const renderReviewCard = reviews.map ((oneReview) => {
+    console.log(oneReview.plant_post)
     return (
       <ReviewPlantsCard
        key={oneReview.id}

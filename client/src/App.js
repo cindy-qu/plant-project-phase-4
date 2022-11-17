@@ -23,6 +23,8 @@ function App() {
   //this state causes the below useEffect to run by being updated when creating, editing, or deleting a plant post
   const [updatePlantPost, setUpdatePlantPost] = useState([])
 
+  console.log(plantPosts)
+  
   // auto-login if user_id in session and fetch user's plants and global plants
   useEffect(() => {
     fetch("/me").then((res) => {

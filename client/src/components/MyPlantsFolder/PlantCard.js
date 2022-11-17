@@ -10,6 +10,7 @@ const PlantCard = ({name, image, indoor, pet_safe,state, post_id, setUpdateAfter
       })
       .then(setUpdateAfterDelete)
     }
+
     
   return (
     <div className="plant-card myPlant-card">
