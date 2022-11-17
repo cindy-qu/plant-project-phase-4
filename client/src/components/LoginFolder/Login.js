@@ -22,7 +22,7 @@ const Login = ({ setUser, fetchGlobalPlants }) => {
       }).then((res) => {
         setIsLoading(false)
         if (res.ok) {
-          res.json().then((userData) => {
+            res.json().then((userData) => {
             setUser(userData)
             fetchGlobalPlants();
             history.push('/myPlants')

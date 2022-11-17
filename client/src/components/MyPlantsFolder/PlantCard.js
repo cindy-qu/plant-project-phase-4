@@ -10,9 +10,10 @@ const PlantCard = ({name, image, indoor, pet_safe,state, post_id, setUpdateAfter
       })
       .then(setUpdateAfterDelete)
     }
+
     
   return (
-    <div className="plant-card">
+    <div className="plant-card myPlant-card">
       <h3>{name}</h3>
       <img src={image} alt={name} />
       <p>{indoor ? "Indoor Plant" : "Outdoor Plant"}</p>
@@ -21,7 +22,7 @@ const PlantCard = ({name, image, indoor, pet_safe,state, post_id, setUpdateAfter
       <Link to={`myPlants/${post_id}`}>
         <button className= "edit-btn">Edit</button>
       </Link>
-      <button className= "edit-btn" onClick={handleDeleteClick}>X</button>
+      <button className= "delete-btn" onClick={handleDeleteClick}>X</button>
 
     </div>
   )

@@ -12,6 +12,8 @@ Review.destroy_all
 states = 
 ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 
+plantsArr = ['https://images.unsplash.com/photo-1544474921-9df05bc76d66?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80','https://images.unsplash.com/photo-1599009944997-3544a939813c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80', 'https://images.unsplash.com/photo-1521503862198-2ae9a997bbc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80', 'https://images.unsplash.com/photo-1590417975638-1f8d37cf22df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80', 'https://images.unsplash.com/photo-1536846826492-c51b3984bc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80','https://images.unsplash.com/photo-1623173508476-9883063f904b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80','https://images.unsplash.com/photo-1604762512601-335085b1e11c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80','https://images.unsplash.com/photo-1517024785852-498ab0c02de5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1722&q=80']
+
 booleanValue = ['true', 'false']
 
 
@@ -22,15 +24,8 @@ mustafa = User.create(username: 'Mustafa7', password: "6789011111")
 
 puts "Seeding Plant Posts..."
 99.times do
-    PlantPost.create(plant_name: Faker::Tea.variety , image: Faker::LoremFlickr.image, state: states.sample, indoor: booleanValue.sample, pet_safe: booleanValue.sample, user_id: User.all.sample.id)
+    PlantPost.create(plant_name: Faker::Tea.variety , image: plantsArr.sample, state: states.sample, indoor: booleanValue.sample, pet_safe: booleanValue.sample, user_id: User.all.sample.id)
 end
-
-# t.string "image"
-# t.bigint "user_id", null: false
-# t.string "plant_name"
-# t.boolean "indoor"
-# # t.string "state"
-# t.boolean "pet_safe"
 
 
 puts "Seeding Reviews..."

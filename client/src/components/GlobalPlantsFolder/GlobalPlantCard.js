@@ -12,6 +12,8 @@ const GlobalPlantCard = ({setUpdateReviews, id, plant_name, image,indoor, pet_sa
   )
 })
 
+const noReviewsYet = 'Be the first Plantastic reviewer!'
+
 const [errors, setErrors] = useState([]);
 const [comment, setComment] = useState("")
 const history = useHistory();
@@ -54,23 +56,24 @@ const formErrorMsg = errors.map((err) => (
   ))
 
 
-
-  
   return (
-    <div className="plant-card">
+    <div className="globalPlant-card plant-card">
       <h3>{plant_name}</h3>
       <img src={image} alt={plant_name} />
-      <p>{username}</p>
+      <p className='globalUsername'>Created By: {username}</p>
       <p>{indoor ? "Indoor Plant" : "Outdoor Plant"}</p>
       <p>{pet_safe ? "Pet Safe ✅" : "Unsafe for Pets"}</p>
       <p>Location: {state}</p>
     
       <h4>Reviews</h4>
-      {renderGlobalReviews}
+      <div className="review-list">
+      {renderGlobalReviews.length > 0 ? renderGlobalReviews : noReviewsYet} 
+      </div>
+      
 
       <form className="review-form" onSubmit={handleCommentSubmit}>
         <h4>Add Review</h4>
-        <textarea value={comment} onChange={handleComments}></textarea>
+        <textarea value={comment} placeholder="Add a review..." onChange={handleComments}></textarea>
         <button>Submit</button>
       </form>
       <ul>{formErrorMsg}</ul>

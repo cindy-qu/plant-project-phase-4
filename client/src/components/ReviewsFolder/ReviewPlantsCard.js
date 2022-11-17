@@ -13,11 +13,13 @@ const ReviewPlantsCard = ({ comment, id, setUpdateReviews, image }) => {
   }
   
   return (
-    <div className="review-card">
+    <div className="review-card plant-card">
       <img src={image} alt={id} />
       <h3>{comment}</h3>
-      <button onClick={handleDelete}>Delete</button>
-      <button><Link to={`/reviews/${id}`}>Edit</Link></button>
+      <button className= "delete-btn" onClick={handleDelete} >X</button>
+      <Link to={`/reviews/${id}`}>
+      <button className= "edit-btn">Edit</button>
+      </Link>
     </div>
   )
 }
