@@ -8,10 +8,9 @@ const PlantCard = ({name, image, indoor, pet_safe,state, post_id, setUpdateAfter
       fetch(`/plant_posts/${post_id}`,{
       method: "DELETE",
       })
-      .then(res => res.json)
-      .then(setUpdateAfterDelete(post_id))
+      .then(setUpdateAfterDelete)
     }
-  
+    
   return (
     <div className="plant-card">
       <h3>{name}</h3>
