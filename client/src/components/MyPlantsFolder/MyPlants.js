@@ -15,7 +15,7 @@ const MyPlants = ({user, setUpdateAfterDelete}) => {
   // })
 
   return (
-    <div>
+    <div className='page-container'>
       <h1>MyPlants</h1>
       <PlantList
         userPosts={userPosts}

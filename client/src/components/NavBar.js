@@ -23,8 +23,9 @@ const NavBar = ({ user, setUser }) => {
             <NavLink to="/myPlants">My Plants</NavLink>
             <NavLink to="/reviews">My Reviews</NavLink>
             <NavLink to="/globalPlants">Global Plants</NavLink>
-            <span>Hello {user.username}!</span>
+            <span>Hello {user.username}!
             <button onClick={handleLogoutClick}>Logout</button>
+            </span>
         </div>
 
     )

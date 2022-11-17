@@ -1,17 +1,15 @@
+
+:root{
+  --box-shadow: rgb(230, 235, 239);
+  --border-grey: rgb(156, 146, 146)
+}
 .App {
   text-align: center;
 }
 
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
+.page-container{
+  padding-top: 100px;
+}
 
 
 /*------------ NAVBAR ---------- */
@@ -22,7 +20,7 @@
   align-items:left;
   align-content: center;
   flex-direction: row;
-  /* position: fixed; */
+  position: fixed;
   z-index: 2;
   max-width: 1500px;
   backdrop-filter: blur(5px);
@@ -42,11 +40,25 @@
   cursor: pointer;
 }
 
+.nav span{
+  margin-left: auto;
+  margin-top: 15px;
+  padding-right: 20px;
+}
+
+.sign-out{
+  margin: 5px;
+}
+
 /* -------- About -------- */
 .about{
   padding-top: 100px;
   margin: 0 100px;
   }
+
+.about li{
+  list-style: none;
+}
   
   .about-information img{
     height:200px;
@@ -142,10 +154,15 @@
 }
 
 
-/*------------ MyPlants/GlobalPlants ---------- */
+/*------------ MyPlants/GlobalPlants,Reviews General Card Stylling ---------- */
 
 .plant-card {
+position: relative;
 margin: 60px;
+width: 60vw;
+margin: 0 auto;
+padding: 60px 0;
+border-bottom: 3px solid var(--border-grey);
 }
 
 .plant-card img {
@@ -154,7 +171,50 @@ margin: 60px;
   object-fit: cover;
   border-radius: 5px;
   margin-bottom: 10px;
-  border: 1px solid rgb(156, 146, 146);
+  border: 1px solid var(--border-grey);
+  box-shadow: 5px 10px 10px var(--box-shadow);
+}
+
+/* -----delete/edit btns for myPlants and MyReviews--------- */
+
+.delete-btn{
+  position:absolute;
+  top: 30px;
+  right: 0;
+  font-size: 20px;
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 0;
+}
+.edit-btn{
+  position:absolute;
+  top: 30px;
+  right: 35px;
+  font-size: 20px;
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+
+/* -----Global Plants --------- */
+.globalUsername{
+  position:absolute;
+  top: 10px;
+  left: 0px;
+  font-size: 20px;
+  background-color: transparent;
+  padding: 0;
+}
+
+.review-list{
+  width: 30vw;
+  margin: 0 auto;
+  overflow-y: scroll;
+  height: 50px;
+  border: 1px solid var(--border-grey);
+  border-radius: 5px;
+  box-shadow: 5px 10px 10px var(--box-shadow);
 }
 
 /* -----Hidden class --------- */

@@ -57,16 +57,19 @@ const formErrorMsg = errors.map((err) => (
 
   
   return (
-    <div className="plant-card">
+    <div className="globalPlant-card plant-card">
       <h3>{plant_name}</h3>
       <img src={image} alt={plant_name} />
-      <p>{username}</p>
+      <p className='globalUsername'>Created By: {username}</p>
       <p>{indoor ? "Indoor Plant" : "Outdoor Plant"}</p>
       <p>{pet_safe ? "Pet Safe ✅" : "Unsafe for Pets"}</p>
       <p>Location: {state}</p>
     
       <h4>Reviews</h4>
+      <div className="review-list">
       {renderGlobalReviews}
+      </div>
+      
 
       <form className="review-form" onSubmit={handleCommentSubmit}>
         <h4>Add Review</h4>
