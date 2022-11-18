@@ -163,14 +163,18 @@ ul{
 
   .about-information a{
     text-decoration: none;
-    color:rgb(184, 158, 173);
+    color:rgb(205, 174, 215);
+  }
+  .about-information a:hover{
+    font-weight: bold;
+    transform: scale(1.1);
+    cursor: pointer;
   }
 
   .about-information p{
     font-size: 14px;
     height: 25px;
   }
-
 
 /*------------Signup pages ---------- */
 .login-container{
@@ -195,7 +199,7 @@ ul{
   justify-content: center;
   align-content: center;
   align-items: center;
-  margin: 50px auto;
+  margin: 0 auto;
   width: 50vw;
   max-width: 500px;
 }
@@ -218,8 +222,6 @@ ul{
 .login-form button, .signup-form button{
  margin-top: 20px;
  color: white;
-
-
 }
 
 .login-form label, .signup-form label{
@@ -236,6 +238,10 @@ ul{
   margin: 10px 0;
   border: 2px solid var(--dark-green);
   width: 150px;
+}
+
+.login-form p, .signup-form p{
+ margin-top: 0;
 }
 
 .loginBlur{

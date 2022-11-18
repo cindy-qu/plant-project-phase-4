@@ -55,7 +55,7 @@ const About = () => {
         <div className="about-information">
             <img src={Mustafa_about} alt="Mustafa" /> 
             <a href="https://www.linkedin.com/in/mustafa-rizvi-970494138/" target="_blank" >Mustafa <i className="fa-brands fa-linkedin" /></a>
-            <p>Mustafa's favorite plant is... </p>
+            <p>Mustafa's favorite plant is... a Fiddle Leaf Fig!</p>
         </div>
     </div>
   </div>
