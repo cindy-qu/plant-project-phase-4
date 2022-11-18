@@ -6,8 +6,8 @@ const PlantCard = ({name, image, indoor, pet_safe,state, post_id, setUpdateAfter
 
   const [openModal, setOpenModal] = useState(false)
 
-     // Deleting a brew logic:
-     function handleDeletePost(){
+     // Deleting a plant post logic:
+     function handleDelete(){
       fetch(`/plant_posts/${post_id}`,{
       method: "DELETE",
       })
@@ -31,7 +31,7 @@ const PlantCard = ({name, image, indoor, pet_safe,state, post_id, setUpdateAfter
 
       <button className= "delete-btn" onClick={handleOpen}>X</button>
 
-      <ModalComponent openModal={openModal} handleDeletePost={handleDeletePost} handleClose={handleClose}/>
+      <ModalComponent openModal={openModal} handleDelete={handleDelete} handleClose={handleClose}/>
 
     </div>
   )

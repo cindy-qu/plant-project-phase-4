@@ -2,7 +2,7 @@ import React from 'react'
 import Modal from "@mui/material/Modal"
 import Box from "@mui/material/Box"
 
-const ModalComponent = ({openModal, handleClose, handleDeletePost}) => {
+const ModalComponent = ({openModal, handleClose, handleDelete}) => {
 
   
   return (
@@ -29,7 +29,7 @@ const ModalComponent = ({openModal, handleClose, handleDeletePost}) => {
       <div >
         Are you sure you want to delete? This cannot be undone. 
       </div>
-      <button className='submit-btn' onClick={() => handleDeletePost()} >Confirm Delete</button>
+      <button className='submit-btn' onClick={() => handleDelete()} >Confirm Delete</button>
     </>
   </Box>
 </Modal>
