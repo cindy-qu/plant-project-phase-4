@@ -12,6 +12,7 @@
   --font-martel:'Martel', serif;
 }
 
+/*------------ Overall Global styles ---------- */
 .App {
   text-align: center;
   margin: 0 auto;
@@ -54,6 +55,8 @@ h1, h3{
 ul{
   list-style: none;
 }
+
+
 
 
 /*------------ NAVBAR ---------- */
@@ -101,7 +104,7 @@ ul{
   width: 400px;
   height: 350px;
   border-radius: 50%;
-  object-fit: contain;
+  object-fit: cover;
   padding-top: 60px;
 }
 
@@ -223,22 +226,27 @@ ul{
   font-family: var(--abril-font);
   font-size: 20px;
   color: var(--main-plum);
+  font-weight: bold;
 }
 
 .login-form input, .signup-form input{
   padding: 5px;
   border: 2px solid;
   border-radius: 5px;
+  margin: 10px 0;
+  border: 2px solid var(--dark-green);
+  width: 150px;
 }
+
 .loginBlur{
   backdrop-filter: blur(15px);
   background-color: var(--white-blur);
   /* border: 1px solid white; */
-  border-radius: 7px;
+  border-radius: 10px;
   margin: 120px auto;
   width: 50vw;
   max-width: 500px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   font-family: var(--font-martel);
   color: var(--dark-green)
 }
@@ -258,6 +266,7 @@ ul{
   border: 2px solid;
   border-radius: 5px;
   margin: 10px 5px;
+  border: 2px solid var(--dark-green);
 }
 
 .plant-form button {
@@ -265,6 +274,10 @@ ul{
 }
 .plant-form select {
   margin: 10px 5px;
+  border: 2px solid var(--dark-green);
+  border-radius: 5px;
+  font-family: var(--font-martel);
+  font-size: 10px;
 }
 
 
@@ -412,6 +425,7 @@ backdrop-filter: blur(10px);
 }
 
 .edit-form-title{
+  margin-top: 0px;
   color: var(--dark-green)
 }
 
