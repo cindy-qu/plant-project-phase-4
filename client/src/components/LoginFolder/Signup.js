@@ -5,6 +5,7 @@ import PlantasticPic from '../../imagesFolder/Plantastic LOGO.png';
 const Signup = ({ setUser, fetchGlobalPlants }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -12,26 +13,26 @@ const Signup = ({ setUser, fetchGlobalPlants }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setIsLoading(true)
-    fetch("/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username: username, password: password }),
-    }).then((res) => {
-      setIsLoading(false)
-      if (res.ok) {
-        res.json().then((userData) => {
-          setUser(userData)
-          fetchGlobalPlants()
-          history.push('/myPlants')
+      setIsLoading(true)
+        fetch("/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username: username, password: password, password_confirmation: passwordConfirmation }),
+        }).then((res) => {
+          setIsLoading(false)
+          if (res.ok) {
+            res.json().then((userData) => {
+              setUser(userData)
+              fetchGlobalPlants()
+              history.push('/myPlants')
+            });
+          } else {
+            res.json().then((err) => setErrors(err.errors))
+          }
         });
-      } else {
-        res.json().then((err) => setErrors(err.errors))
-      }
-    });
-  }
+    }
 
   const formErrorMsg = errors.map((err) => (
     <li key={err}>{err}</li>
@@ -55,6 +56,13 @@ const Signup = ({ setUser, fetchGlobalPlants }) => {
         id="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+      />
+      <label htmlFor="passwordConfirm">Confirm Password</label>
+      <input
+        type="password"
+        id="password_confirmation"
+        value={passwordConfirmation}
+        onChange={(e) => setPasswordConfirmation(e.target.value)}
       />
       <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
     </form>
