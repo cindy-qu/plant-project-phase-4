@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { useParams, Link, useHistory } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const EditPlantCard = ({user, setUpdatePlantPost}) => {
   const [updated, setUpdated] = useState(false);
@@ -11,7 +11,6 @@ const EditPlantCard = ({user, setUpdatePlantPost}) => {
   const [petSafe, setPetSafe] = useState(false)
   const [indoor, setIndoor] = useState(false)
 
-  const history = useHistory()
 
   const paramsString = useParams()
   // params is the id of the entry
@@ -74,20 +73,29 @@ const EditPlantCard = ({user, setUpdatePlantPost}) => {
             res.json().then((updatedEntry) => {
               setUpdatePlantPost(updatedEntry)
               setUpdated(updated => !updated)
+              //clear form
+              setPlantName("")
+              setImage("")
+              setLocation("")
+              setIndoor("")
+              setPetSafe("")
             });
           } else {
-            res.json().then((err) => console.log(err))
-            // res.json().then((err) => setErrors(err.errors))
+            res.json().then((err) => setErrors(err.errors))
           }
         })
 
    }
   
-  const editMsgClassName = updated ? '' : 'hidden';
+    const editMsgClassName = updated ? '' : 'hidden';
+
+    const formErrorMsg = errors.map((err) => (
+      <p key={err}>{err}</p>
+      ))
 
   return (
     <div className='plant-form-container edit-page'>
-        <h2>Edit a Plant Post!</h2>
+        <h1 className="edit-form-title">Edit a Plant Post!</h1>
         <form className="plant-form" autoComplete='off' onSubmit={handleUpdateSubmit}>
 
             <label>Plant Name:</label>
@@ -161,12 +169,13 @@ const EditPlantCard = ({user, setUpdatePlantPost}) => {
 
             <button id="add-btn"className='submit-btn' type="submit">UPDATE PLANT</button>
         </form>
-        {/* <ul>{formErrorMsg}</ul> */}
+
+        <ul>{formErrorMsg}</ul>
 
         <div id="edit-complete-msg" className={editMsgClassName}>
                 <h3>Edit complete!</h3>
                 <Link to="/myPlants">
-                  <button className='return-to-myPlants'>View My Plants
+                  <button className='submit-btn'>View My Plants
                   </button>
                 </Link>
         </div>

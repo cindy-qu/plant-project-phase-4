@@ -74,7 +74,7 @@ const formErrorMsg = errors.map((err) => (
   return (
     <div className='plant-form-container'>
       
-        <h2>Add a new Plant!</h2>
+        <h2 className="edit-form-title">Add a new Plant!</h2>
         <form className="plant-form" autoComplete='off' onSubmit={handlePlantSubmit}>
 
             <label>Plant Name:</label>

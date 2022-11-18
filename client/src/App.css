@@ -5,7 +5,7 @@
   --white: rgb(228, 232, 234);
   --white-blur: rgba(228, 232, 234, 0.3);
   --dark-grey:rgb(83, 87, 86);
-  --green: rgba(16, 161, 115,0.9);
+  --green: rgba(10, 149, 91, 0.9);
   --seed-green: rgb(68, 126, 88);
   --dark-green: #034f2f;
   --font-q:'Questrial', sans-serif;
@@ -43,11 +43,13 @@ button:hover{
   cursor: pointer;
 }
 
+h1 {
+  font-size: 40px;
+}
+
 h1, h3{
   color: var(--dark-green);
 }
-
-
 
 
 /*------------ NAVBAR ---------- */
@@ -62,7 +64,7 @@ h1, h3{
   flex-direction: row;
   z-index: 2;
   max-width: 1500px;
-  background-color: var(--green);
+  background-color: var(--seed-green);
   backdrop-filter: blur(5px);
 }
 
@@ -102,26 +104,26 @@ h1, h3{
 /* -------- About -------- */
 .about-container{
   width: 100vw;
-  height: 100vh;
   padding: none;
   margin: 0 auto;
   max-width: 1500px;
   background-image: url("./PlantImages/plantPic7.jpg");
   background-repeat: no-repeat; 
   background-size: cover;
+  background-attachment: fixed;
+  overflow-y: scroll;
+
 }
 .about{
   padding: 100px 50px;
   margin: 0 auto;
   width: 60vw;
-  height: 100vh;
   max-width: 1500px;
-  overflow-y: scroll;
   color: var(--white);
 	backdrop-filter: blur(15px);
   }
 
-  .about h1{
+  .about h1, .about h2, .about h3{
     color: var(--white)
   }
 
@@ -229,7 +231,7 @@ h1, h3{
   background-color: var(--white-blur);
   /* border: 1px solid white; */
   border-radius: 7px;
-  margin: 200px auto;
+  margin: 120px auto;
   width: 50vw;
   max-width: 500px;
   padding-bottom: 15px;
@@ -295,6 +297,7 @@ backdrop-filter: blur(10px);
   margin-bottom: 0;
   padding: 3px;
   color: var(--dark-green);
+  border: solid 1px var(--dark-green);
 }
 .edit-btn{
   position:absolute;
@@ -306,6 +309,7 @@ backdrop-filter: blur(10px);
   margin-bottom: 0;
   color: var(--dark-green);
   padding: 3px;
+  border: solid 1px var(--dark-green);
 }
 
 /* -----My Plants --------- */
@@ -357,8 +361,8 @@ backdrop-filter: blur(10px);
   margin: 0 auto;
   padding: 10px;
   overflow-y: scroll;
-  height: 50px;
-  max-height: 150px;
+  height: 150px;
+  max-height: 250px;
   text-align: left;
   border: 1px solid var(--border-grey);
   border-radius: 5px;
@@ -380,7 +384,7 @@ backdrop-filter: blur(10px);
 }
 
 .review-input textarea{
-  height: 100px;
+  height: 50px;
   width: 30vw;
   max-width: 400px;
   padding: 12px 20px;
@@ -388,6 +392,7 @@ backdrop-filter: blur(10px);
   border-radius: 4px;
   background-color: #f8f8f8;
   font-size: 16px;
+  font-family: var(--font-martel);
 }
 
 .submit-btn {
@@ -400,6 +405,10 @@ backdrop-filter: blur(10px);
 
 .edit-page{
   padding-top: 200px;
+}
+
+.edit-form-title{
+  color: var(--dark-green)
 }
 
 /* ------------Movie Class------------ */
