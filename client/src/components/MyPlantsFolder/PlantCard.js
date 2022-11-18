@@ -1,16 +1,22 @@
-import React from 'react'
+import {useState} from 'react'
 import {Link} from 'react-router-dom'
+import ModalComponent from '../ModalComponent'
 
 const PlantCard = ({name, image, indoor, pet_safe,state, post_id, setUpdateAfterDelete}) => {
 
+  const [openModal, setOpenModal] = useState(false)
+
      // Deleting a brew logic:
-     function handleDeleteClick(){
+     function handleDeletePost(){
       fetch(`/plant_posts/${post_id}`,{
       method: "DELETE",
       })
       .then(setUpdateAfterDelete)
     }
 
+    //open/close modal
+    const handleOpen = () => setOpenModal(true);
+    const handleClose = () => setOpenModal(false);
     
   return (
     <div className="plant-card myPlant-card">
@@ -22,7 +28,10 @@ const PlantCard = ({name, image, indoor, pet_safe,state, post_id, setUpdateAfter
       <Link to={`myPlants/${post_id}`}>
         <button className= "edit-btn">Edit</button>
       </Link>
-      <button className= "delete-btn" onClick={handleDeleteClick}>X</button>
+
+      <button className= "delete-btn" onClick={handleOpen}>X</button>
+
+      <ModalComponent openModal={openModal} handleDeletePost={handleDeletePost} handleClose={handleClose}/>
 
     </div>
   )

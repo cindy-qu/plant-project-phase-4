@@ -46,12 +46,7 @@ function App() {
       }
     })
   }
-
-  console.log(plantPosts)
-  
-
   if (!user) return <LoginContainer fetchGlobalPlants={fetchGlobalPlants} setUser={setUser} />
-  
 
   return (
     <div className="App">
