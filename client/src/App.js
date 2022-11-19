@@ -28,6 +28,8 @@ function App() {
     fetch("/me").then((res) => {
       if (res.ok) {
         res.json().then((userData) => {
+          console.log(userData.reviews)
+          
           setUser(userData)
           setCurrentUserReviews(userData.reviews)
           fetchGlobalPlants();
@@ -48,7 +50,9 @@ function App() {
       }
     })
   }
+
   if (!user) return <LoginContainer fetchGlobalPlants={fetchGlobalPlants} setUser={setUser} setCurrentUserReviews={setCurrentUserReviews} />
+
 
   return (
     <div className="App">
@@ -82,7 +86,7 @@ function App() {
         </Route>
 
         <Route exact path="/reviews/:id">
-          <ReviewPlantsEdit reviews={user.reviews}
+          <ReviewPlantsEdit reviews={currentUserReviews}
           setUpdateReviews={setUpdateReviews}/>
         </Route>
 

@@ -2,17 +2,17 @@ import React from 'react'
 import ReviewPlantsCard from './ReviewPlantsCard'
 
 const ReviewPlantsList = ({ reviews, setUpdateReviews, setUpdateAfterDelete }) => {
-
+  // console.log(reviews)
+  
   const renderReviewCard = reviews?.map ((oneReview) => {
+    console.log(oneReview)
+    
       return (
         <ReviewPlantsCard
-         key={oneReview.id}
-         comment={oneReview.comment}
-         id={oneReview.id}
-         image={oneReview.plant_post?.image}
+         key={oneReview.review.id}
+         review={oneReview}
          setUpdateReviews={setUpdateReviews}
          setUpdateAfterDelete={setUpdateAfterDelete}/>
-  
       )
   })
   

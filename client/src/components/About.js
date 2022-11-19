@@ -32,29 +32,29 @@ const About = () => {
       </ul>
     <h3>About the Creators</h3>
     <p>
-      Anna Schmidt, Brooke Ross, Cindy Qu, and Mustafa Rizvi software engineering students at Flatiron School.
+      Anna Schmidt, Brooke Ross, Cindy Qu, and Mustafa Rizvi are software engineering students at Flatiron School.
     </p>
     <h3>Connect with them all on LinkedIn here: </h3>
         
     <div className="about-photos">
         <div className= "about-information">
             <img src={Anna_about} alt="Anna" />
-            <a href="https://www.linkedin.com/in/annaschmidt1697/" target="_blank">Anna <i className="fa-brands fa-linkedin" /></a> 
+            <a href="https://www.linkedin.com/in/annaschmidt1697/" target="blank" rel="noreferrence">Anna <i className="fa-brands fa-linkedin" /></a> 
             <p>Anna's favorite plant is... a Tillandsia!</p>
         </div>
         <div className="about-information"> 
             <img src= {Brooke_about} alt="Brooke"/>
-            <a href="https://www.linkedin.com/in/brooke-ross-se/" target="_blank" >Brooke <i className="fa-brands fa-linkedin" /></a> 
+            <a href="https://www.linkedin.com/in/brooke-ross-se/" target="blank"rel="noreferrence" >Brooke <i className="fa-brands fa-linkedin" /></a> 
             <p>Brooke's favorite plant is... a Myrtillocactus geometrizans!</p>
         </div>           
         <div className="about-information"> 
             <img src={Cindy_about} alt="Cindy" />
-            <a href="https://www.linkedin.com/in/cindy-qu/" target="_blank" >Cindy <i className="fa-brands fa-linkedin" /></a>
+            <a href="https://www.linkedin.com/in/cindy-qu/" target="blank" rel="noreferrence" >Cindy <i className="fa-brands fa-linkedin" /></a>
             <p>Cindys's favorite plant is... a Asplenium nidus variegated!</p>
         </div>
         <div className="about-information">
             <img src={Mustafa_about} alt="Mustafa" /> 
-            <a href="https://www.linkedin.com/in/mustafa-rizvi-970494138/" target="_blank" >Mustafa <i className="fa-brands fa-linkedin" /></a>
+            <a href="https://www.linkedin.com/in/mustafa-rizvi-970494138/" target="blank" rel="noreferrence">Mustafa <i className="fa-brands fa-linkedin" /></a>
             <p>Mustafa's favorite plant is... a Fiddle Leaf Fig!</p>
         </div>
     </div>

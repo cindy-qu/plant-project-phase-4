@@ -2,18 +2,23 @@ import {useState, useEffect } from "react";
 import { Link, useParams} from 'react-router-dom'
 
 const ReviewPlantsEdit = ({ reviews, setUpdateReviews }) => {
+  console.log(reviews)
+  
   const [updateReviewForm, setUpdateReviewForm] = useState("");
   const [updated, setUpdated] = useState(false)
   const [errors, setErrors] = useState([]);
 
+//get plant_post id with useParams
   const paramsObj = useParams()
   const paramsId = parseInt(paramsObj.id)
 
-  let matchReview = reviews.find(review => review.id === paramsId ? review : '')
+  let matchReview = reviews.find(rev => rev.review.id === paramsId ? rev.review : '')
 
+  console.log(matchReview)
+  
   //set initial contents of review edit form to be original review
   useEffect(() => {
-    setUpdateReviewForm(matchReview.comment)
+    setUpdateReviewForm(matchReview.review.comment)
   }, [paramsId])
 
 
