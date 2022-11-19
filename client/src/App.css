@@ -140,7 +140,7 @@ ul{
   padding: none;
   margin: 0 auto;
   max-width: 1500px;
-  background-image: url("./PlantImages/plantPic7.jpg");
+  background-image: url("./PlantImages/plantPic7.webp");
   background-repeat: no-repeat; 
   background-size: cover;
   background-attachment: fixed;
@@ -369,7 +369,7 @@ backdrop-filter: blur(10px);
   margin: none;
   max-width: 1500px;
   max-height: 1200px;  
-  background-image: url("./PlantImages/plantPic5.jpg");
+  background-image: url("./PlantImages/plantPic5.webp");
   background-position: top 20% left 0%;
   background-repeat: no-repeat; 
   background-size: cover;
@@ -382,7 +382,7 @@ backdrop-filter: blur(10px);
 /* -----Global Plants --------- */
 
 .global-page{
-  background-image: url("./PlantImages/plantPic6.jpg");
+  background-image: url("./PlantImages/plantPic6.webp");
   background-position: top 50% right 0%;
   background-repeat: no-repeat; 
   background-size: center;

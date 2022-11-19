@@ -43,13 +43,6 @@ const NavBar = ({ user, setUser }) => {
              <NavLink to="/myPlants">My Plants</NavLink>
               <NavLink to="/reviews">My Reviews</NavLink>
              <NavLink to="/globalPlants">Global Plants</NavLink>
-            {/* <ul> */}
-              {/* <li><NavLink to="/">Home</NavLink></li>
-              <li><NavLink to="/about">About</NavLink></li>
-              <li><NavLink to="/myPlants">My Plants</NavLink></li>
-              <li> <NavLink to="/reviews">My Reviews</NavLink></li>
-              <li><NavLink to="/globalPlants">Global Plants</NavLink></li> */}
-            {/* </ul> */}
             </div>
             <span>Hello {user.username}!
             <button className='sign-out' onClick={handleLogoutClick}>Logout</button>
