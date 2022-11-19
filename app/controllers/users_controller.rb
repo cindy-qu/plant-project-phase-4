@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     #keep logged-in
     def show
         current_user = User.find(session[:user_id])
-        render json: current_user, include: ['plant_posts','reviews.plant_post'], status: :ok
+        render json: current_user, status: :ok
+        # render json: current_user.includes(:plant_posts, reviews:[:plant_post]), status: :ok
     end
 
     private
@@ -25,3 +26,8 @@ class UsersController < ApplicationController
     end
 
 end
+
+#   def show
+#     current_user = User.find(session[:user_id])
+#     render json: current_user, include: ['plant_posts','reviews.plant_post'], status: :ok
+# end

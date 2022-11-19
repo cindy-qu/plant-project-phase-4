@@ -2,12 +2,12 @@ import { useState } from 'react'
 import {Link} from "react-router-dom"
 import ModalComponent from '../ModalComponent'
 
-const ReviewPlantsCard = ({ comment, id, image, setUpdateAfterDelete }) => {
+const ReviewPlantsCard = ({ review, setUpdateAfterDelete }) => {
 
   const [openModal, setOpenModal] = useState(false)
 
   function handleDelete(){
-    fetch(`/reviews/${id}`, {
+    fetch(`/reviews/${review.id}`, {
       method: 'DELETE',
     })
     .then(setUpdateAfterDelete)
@@ -16,13 +16,15 @@ const ReviewPlantsCard = ({ comment, id, image, setUpdateAfterDelete }) => {
     //open/close modal
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
+  // console.log(review)
   
   return (
     <div className="review-card plant-card">
-      <img src={image} alt={id} />
-      <h3>{comment}</h3>
+      <h2>{review.plant_post.plant_name}</h2>
+      <img src={review.plant_post?.image} alt={review.plant_post?.plant_name} />
+      <h3>{review.review.comment}</h3>
 
-      <Link to={`/reviews/${id}`}>
+      <Link to={`/reviews/${review.review.id}`}>
       <button className= "edit-btn">Edit</button>
       </Link>
 
