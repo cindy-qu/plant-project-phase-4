@@ -62,28 +62,38 @@ ul{
 /*------------ NAVBAR ---------- */
 .nav {
   width: 100vw;
+  height: 60px;
   position: fixed;
   margin: 0 auto;
   display: flex;
   justify-content: left;
-  align-items:left;
+  align-items:center;
   align-content: center;
-  flex-direction: row;
-  z-index: 2;
+  /* flex-direction: row; */
+  z-index: 1;
   max-width: 1500px;
   background-color: var(--seed-green);
   backdrop-filter: blur(5px);
 }
 
-.nav a{
-  font-size: 1rem;
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-menu a{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  font-size: 16px;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: none; 
   padding: 25px 0; 
   margin: 0 25px;
   transition: 0.2s ease-in-out;
   color: var(--white);
-}
+} 
+
 .nav a:hover{
   transform: scale(1.1);
   cursor: pointer;
@@ -96,8 +106,24 @@ ul{
   color: var(--white);
 }
 
+.hamburger {
+	border: 0;
+	height: 40px;
+	width: 40px;
+	padding: 0.5rem;
+	border-radius: 50%;
+	background-color: transparent;
+  color: var(--white);
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	display: none;
+}
+
 .sign-out{
-  margin: 7px;
+  margin-left: 10px;
 }
 /*------------ Home ---------- */
 .home img{
@@ -389,7 +415,6 @@ backdrop-filter: blur(10px);
   text-align: left;
   border: 1px solid var(--border-grey);
   border-radius: 5px;
-  box-shadow: 5px 10px 10px var(--box-shadow);
 }
 
 .review-form{
@@ -452,3 +477,61 @@ backdrop-filter: blur(10px);
   visibility: hidden;
 }
 
+/* -----Media Queries --------- */
+@media screen and (max-width: 925px) {
+  .nav-menu a{
+    font-size: 12px;
+  }
+
+  .my-plants-page{
+    background-position: top 20% right 50%;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+		display: block;
+    background-color: var(--seed-green);
+    backdrop-filter: blur(5px);
+    z-index: 10;
+	}
+
+  .nav-menu{
+    flex-direction: column;
+    justify-content: left;
+    margin-top: 200px;
+    padding: 10px 0;
+    background-color: var(--seed-green);
+    border-radius: 0 0 7px 0;
+    transform: translateX(-100%);
+		transition: 0.4s ease-in;
+  }
+
+  .nav-menu a{
+    padding: 5px;
+    color: var(--white);
+    font-size: 11px;
+  }
+
+  .expanded {
+    transform: translateX(0%);
+  }
+
+  .about-photos{
+    flex-direction: column;
+  }
+
+  .plant-card{
+    width: 60vw;
+
+  }
+  .plant-card img{
+    width: 200px;
+    height: 200px;
+
+  }
+
+  
+
+}
