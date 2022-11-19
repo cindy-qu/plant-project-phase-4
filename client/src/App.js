@@ -63,7 +63,7 @@ function App() {
           <Home user={user} setUpdatePlantPost={setUpdatePlantPost}/>
         </Route>
 
-        <Route exact path="/about">
+        <Route path="/about">
           <About/>
         </Route>
 
@@ -90,7 +90,7 @@ function App() {
           setUpdateReviews={setUpdateReviews}/>
         </Route>
 
-        <Route exact path="/globalPlants">
+        <Route path="/globalPlants">
           <GlobalPlants
             plantPosts={plantPosts}
             errors={errors}
