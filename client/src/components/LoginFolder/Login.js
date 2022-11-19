@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import PlantasticPic from '../../imagesFolder/Plantastic LOGO.png'
 
-const Login = ({ setUser, fetchGlobalPlants }) => {
+const Login = ({ setUser, setCurrentUserReviews, fetchGlobalPlants }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -25,6 +25,7 @@ const Login = ({ setUser, fetchGlobalPlants }) => {
         if (res.ok) {
             res.json().then((userData) => {
             setUser(userData)
+            setCurrentUserReviews(userData.reviews)
             fetchGlobalPlants();
             history.push('/myPlants')
           })

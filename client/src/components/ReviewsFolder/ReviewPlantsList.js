@@ -3,7 +3,7 @@ import ReviewPlantsCard from './ReviewPlantsCard'
 
 const ReviewPlantsList = ({ reviews, setUpdateReviews, setUpdateAfterDelete }) => {
 
-  const renderReviewCard = reviews.map ((oneReview) => {
+  const renderReviewCard = reviews?.map ((oneReview) => {
       return (
         <ReviewPlantsCard
          key={oneReview.id}
