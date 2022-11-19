@@ -13,7 +13,8 @@ import { Route, Switch } from 'react-router-dom'
 
 
 function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
+  const [currentUserReviews, setCurrentUserReviews] = useState(null)
   const [errors, setErrors] = useState([])
   const [plantPosts, setPlantPosts]=useState([])
   const [updateReviews, setUpdateReviews] = useState([])
@@ -21,13 +22,14 @@ function App() {
 
   //this state causes the below useEffect to run by being updated when creating, editing, or deleting a plant post
   const [updatePlantPost, setUpdatePlantPost] = useState([])
-  
+
   // auto-login if user_id in session and fetch user's plants and global plants
   useEffect(() => {
     fetch("/me").then((res) => {
       if (res.ok) {
         res.json().then((userData) => {
           setUser(userData)
+          setCurrentUserReviews(userData.reviews)
           fetchGlobalPlants();
         });
       }
@@ -46,7 +48,7 @@ function App() {
       }
     })
   }
-  if (!user) return <LoginContainer fetchGlobalPlants={fetchGlobalPlants} setUser={setUser} />
+  if (!user) return <LoginContainer fetchGlobalPlants={fetchGlobalPlants} setUser={setUser} setCurrentUserReviews={setCurrentUserReviews} />
 
   return (
     <div className="App">
@@ -55,7 +57,6 @@ function App() {
 
         <Route exact path="/">
           <Home user={user} setUpdatePlantPost={setUpdatePlantPost}/>
-          {/* <PlantForm user={user} setUpdatePlantPost={setUpdatePlantPost} /> */}
         </Route>
 
         <Route exact path="/about">
@@ -67,14 +68,14 @@ function App() {
         </Route>
 
         <Route exact path="/myPlants/:id">
-          <EditPlantCard 
+          <EditPlantCard
             user={user}
             setUpdatePlantPost={setUpdatePlantPost}
           />
         </Route>
 
         <Route exact path="/reviews">
-          <ReviewPlants reviews={user.reviews}
+          <ReviewPlants reviews={currentUserReviews}
           setUpdateReviews={setUpdateReviews}
           setUpdateAfterDelete={setUpdateAfterDelete}
           />

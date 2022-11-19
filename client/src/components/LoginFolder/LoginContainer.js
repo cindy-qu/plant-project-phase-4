@@ -6,7 +6,7 @@ import VideoBackground from "../../PlantImages/VideoBackground.mp4"
 
 import React from 'react'
 
-const LoginContainer = ({ setUser, fetchGlobalPlants }) => {
+const LoginContainer = ({ setUser, fetchGlobalPlants, setCurrentUserReviews }) => {
     const [showLogin, setShowLogin] = useState(true);
   return (
     <div className="login-container">
@@ -15,7 +15,7 @@ const LoginContainer = ({ setUser, fetchGlobalPlants }) => {
                 
                 <video id="background-video" src={VideoBackground} autoPlay loop muted />
                 <div className="loginBlur">
-                    <Login setUser={setUser} fetchGlobalPlants={fetchGlobalPlants}/>
+                    <Login setUser={setUser} fetchGlobalPlants={fetchGlobalPlants} setCurrentUserReviews={setCurrentUserReviews}/>
                     <p>Don't have an account?</p>
                     <Link to='/signup'>
                         <button onClick={() => setShowLogin(false)}>Sign Up!</button>
@@ -26,7 +26,7 @@ const LoginContainer = ({ setUser, fetchGlobalPlants }) => {
             <div>
                 <video id="background-video" src={VideoBackground} autoPlay loop muted />
                 <div className="loginBlur">
-                    <Signup setUser={setUser} fetchGlobalPlants={fetchGlobalPlants}/>
+                    <Signup setUser={setUser} fetchGlobalPlants={fetchGlobalPlants} setCurrentUserReviews={setCurrentUserReviews}/>
                     <p>Have an account?</p>
                     <Link to='/login'>
                         <button onClick={() => setShowLogin(true)}>Login!</button>

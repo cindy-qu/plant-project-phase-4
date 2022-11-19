@@ -29,7 +29,6 @@ const handleCommentSubmit = (e) => {
     user_id: my_user_id,
     plant_post_id: id
   }
-// console.log(formData)
 
   fetch(`/reviews`, {
     method: "POST",
