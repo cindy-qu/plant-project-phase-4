@@ -13,7 +13,7 @@ import { Route, Switch } from 'react-router-dom'
 
 
 function App() {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState(null)
   const [currentUserReviews, setCurrentUserReviews] = useState(null)
   const [errors, setErrors] = useState([])
   const [plantPosts, setPlantPosts]=useState([])

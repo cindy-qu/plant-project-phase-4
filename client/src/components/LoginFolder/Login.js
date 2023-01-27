@@ -47,6 +47,7 @@ const Login = ({ setUser, setCurrentUserReviews, fetchGlobalPlants }) => {
         <h1>Login</h1>
         <label htmlFor="username">Username</label>
         <input
+        autocomplete="off"
           type="text"
           id="username"
           value={username}
